@@ -1,21 +1,20 @@
 env:
   # Telegram
-  TG_CHAT: "@dump_rom_bot"
-  TG_TOKEN: ENCRYPTED[d1a9423df240b4603cb01c74226ce778d706ea74b0e392a648427279d2b1769c89ff6cb40d8d4010ac825ae2139258e4]
+  TG_CHAT: "@DumprXDumps"
+  TG_TOKEN: ENCRYPTED[d97b38fc916f5b418bdee35179170de5a921ccc7aef4bbdf33548a75cdb5e874cfeef6e4869526dd4ebf308a9fcdd2df]
   
   # Gitlab
   PUSH_TO_GITLAB: true
-  GITLAB_GROUP: RomdumprX
-  GITLAB_TOKEN: ENCRYPTED[31be84f4bfbeaf35c538145a7e286f3ce79640884f789448a4c3e5dd3707aab05495855046462e92d33469729b99ec5b]
-  GITLAB_INSTANCE: www.opencode.net
+  GITLAB_GROUP: romdump
+  GITLAB_TOKEN: glpat-JCBi8HYFrZJ6qG6CmyyG
+  GITLAB_INSTANCE: github.com
   
   # Private SSH Key
-  PRIV_SSH_KEY: ENCRYPTED[375cddd954a5c75f0f8f56390cdfbc2179b46429265212fbafb6f797d49e713e631f10f8159d2ac9d23a7ae87226bbe8]
-  
+  PRIV_SSH_KEY: ENCRYPTED[!97722f9138020816dc83ac895d0c79ca03cf11277a7db331e75ffa67514425334630f40ab1bc3b8203bfd3d04bf5c039!]
 
 task:
   name: "Firmware Dump by DumprX"
-  only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
+  only_if: $CIRRUS_REPO_OWNER == 'ajaysinghsati'
   skip: $CIRRUS_BRANCH == 'main'
   
   timeout_in: 120m
@@ -28,14 +27,7 @@ task:
   Clone_script:
       - git clone --depth=1 --single-branch https://github.com/DumprX/DumprX.git
   
-  Set-SSH-Keys_script:
-      - mkdir -p ~/.ssh
-      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-      - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
-      - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
-      - echo "$PRIV_SSH_KEY" > ~/.ssh/id_rsa
-      - chmod 600 ~/.ssh/id_rsa
-      
+  
 
   Setup_script:
       - git config --global user.name "ajaysinghsati"
@@ -51,7 +43,25 @@ task:
   DumprX_script:
       - cd DumprX || echo "Already in the Directory"
       - ./dumper.sh $(< ${CIRRUS_WORKING_DIR}/ROM_URL.txt)
-
+  Set-SSH-Keys_script:
+      - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
+    
+      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
+      - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
+      
+      - chmod 600 ~/.ssh/id_rsa
+      - cd ~/.ssh 
+      - cat id_rsa.pub
+      - cd
+      - sleep 600 && echo "10 minutes have passed"
+      - cd 
+      - cd DumprX 
+      - cd out 
+      - ls
+      - git init 
+      - git add .
+      
       
 
   
