@@ -34,12 +34,12 @@ task:
       - chmod 600 ~/.ssh/id_rsa
       - cd ~/.ssh 
       - cat id_rsa.pub
-      - cd
+      - cd -
       - ls
       
   Push-to-gitlab_script:
 
-      - sleep 600 && echo "10 minutes have passed"
+      - sleep 300 && echo "10 minutes have passed"
       - cd 
       - cd DumprX 
       - cd out 
