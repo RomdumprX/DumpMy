@@ -35,8 +35,8 @@ task:
       - chmod 600 ~/.ssh/id_rsa
 
   Setup_script:
-      - git config --global user.name "Sushrut1101"
-      - git config --global user.email "guptasushrut@gmail.com"
+      - git config --global user.name "ajaysinghsati"
+      - git config --global user.email "ajaysinghsati@gmail.com"
       - cd DumprX
       - echo "$GITLAB_TOKEN" > .gitlab_token
       - echo "$GITLAB_GROUP" > .gitlab_group
