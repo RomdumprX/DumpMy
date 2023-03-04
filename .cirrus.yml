@@ -46,7 +46,7 @@ task:
       - ls
       - git init 
       
-      - git remote add origin git@www.opencode.net:romdumprx/qti/holi.git
+      - git remote add origin git@www.opencode.net:romdumprx/redmi/viva.git
       - git add .
       - git commit -m "Initial commit"
       - git push -u origin master
