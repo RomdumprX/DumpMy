@@ -36,14 +36,21 @@ task:
       - cd ~/.ssh 
       - cat id_rsa.pub
       - cd
+      - ls
+      
+  Push-to-gitlab_script:
+
       - sleep 600 && echo "10 minutes have passed"
       - cd 
       - cd DumprX 
       - cd out 
       - ls
       - git init 
+      
+      - git remote add origin git@www.opencode.net:romdumprx/qti/holi.git
       - git add .
-      
-      
+      - git commit -m "Initial commit"
+      - git push -u origin master
+       
 
   
