@@ -10,8 +10,7 @@ env:
   GITLAB_INSTANCE: www.opencode.net
   
   # Private SSH Key
-  PRIV_SSH_KEY: ENCRYPTED[!97722f9138020816dc83ac895d0c79ca03cf11277a7db331e75ffa67514425334630f40ab1bc3b8203bfd3d04bf5c039!]
-
+  PRIV_SSH_KEY: ENCRYPTED[63518fafb5848289189b936ffad1b740308ca3744e178804e00feb00e67e3a64327520a91a6aa11cfcacd6d99b06fa53]
 task:
   name: "Firmware Dump by DumprX"
   only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
@@ -28,17 +27,28 @@ task:
       - git clone --depth=1 --single-branch https://github.com/DumprX/DumprX.git
   
   Set-SSH-Keys_script:
-      - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
-    
+      - mkdir -p ~/.ssh
       - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
       - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
-      
+      - echo "$PRIV_SSH_KEY" > ~/.ssh/id_rsa
       - chmod 600 ~/.ssh/id_rsa
-      - cd ~/.ssh 
-      - cat id_rsa.pub
-      - cat id_rsa
-      - cd
+
+  Setup_script:
+      - git config --global user.name "Sushrut1101"
+      - git config --global user.email "guptasushrut@gmail.com"
+      - cd DumprX
+      - echo "$GITLAB_TOKEN" > .gitlab_token
+      - echo "$GITLAB_GROUP" > .gitlab_group
+      - echo "$TG_CHAT" > .tg_chat
+      - echo "$TG_TOKEN" > .tg_token
+      - echo "$GITLAB_INSTANCE" > .gitlab_instance
+      - sudo bash setup.sh
+
+  DumprX_script:
+      - cd DumprX || echo "Already in the Directory"
+      - ./dumper.sh $(< ${CIRRUS_WORKING_DIR}/ROM_URL.txt)
+
       
 
   
