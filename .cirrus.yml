@@ -11,8 +11,6 @@ env:
   
   # Private SSH Key
   PRIV_SSH_KEY: ENCRYPTED[61547963dc91785a65fb2d75f3404249971daffd79254d411fbb488de70fb17b2f42285e58ea5aa750228b7c95422c1e]
-  # Public SSH Key 
-  PUB_SSH_KEY: ENCRYPTED[698f72a178ba877476a0bec99c846640c321034f2c5051f62b755b6eb9ca8f13371de1befce18250eb16cab33b62d165]
   
 
 task:
@@ -36,7 +34,7 @@ task:
       - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
       - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
       - echo "$PRIV_SSH_KEY" > ~/.ssh/id_rsa
-      - echo "$PUB_SSH_KEY" > ~/.ssh/id_rsa.pub
+      
       
 
   Setup_script:
