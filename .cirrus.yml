@@ -11,6 +11,10 @@ env:
   
   # Private SSH Key
   PRIV_SSH_KEY: ENCRYPTED[63518fafb5848289189b936ffad1b740308ca3744e178804e00feb00e67e3a64327520a91a6aa11cfcacd6d99b06fa53]
+  # Public SSH Key 
+  PUB_SSH_KEY: ENCRYPTED[cad511134861b73f893e3c417660bd95974c126acc12dcf08ed71bf73bb1f480e16c07fd84d891483ffa1439068a9339]
+  
+
 task:
   name: "Firmware Dump by DumprX"
   only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
@@ -32,7 +36,8 @@ task:
       - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
       - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
       - echo "$PRIV_SSH_KEY" > ~/.ssh/id_rsa
-      - chmod 600 ~/.ssh/id_rsa
+      - echo "$PUB_SSH_KEY" > ~/.ssh/id_rsa.pub
+      
 
   Setup_script:
       - git config --global user.name "ajaysinghsati"
