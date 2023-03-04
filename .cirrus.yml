@@ -45,12 +45,11 @@ task:
       - cd DumprX 
       - cd out 
       - ls
-      - git init 
-      
+      - git init --initial-branch=main
       - git remote add origin git@www.opencode.net:romdumprx/redmi/viva.git
       - git add .
       - git commit -m "Initial commit"
-      - git push -u origin master
+      - git push -u origin main
        
 
   
