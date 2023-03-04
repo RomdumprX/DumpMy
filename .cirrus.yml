@@ -1,0 +1,44 @@
+env:
+  # Telegram
+  TG_CHAT: "@DumprXDumps"
+  TG_TOKEN: ENCRYPTED[d97b38fc916f5b418bdee35179170de5a921ccc7aef4bbdf33548a75cdb5e874cfeef6e4869526dd4ebf308a9fcdd2df]
+  
+  # Gitlab
+  PUSH_TO_GITLAB: true
+  GITLAB_GROUP: romdump
+  GITLAB_TOKEN: glpat-JCBi8HYFrZJ6qG6CmyyG
+  GITLAB_INSTANCE: github.com
+  
+  # Private SSH Key
+  PRIV_SSH_KEY: ENCRYPTED[!97722f9138020816dc83ac895d0c79ca03cf11277a7db331e75ffa67514425334630f40ab1bc3b8203bfd3d04bf5c039!]
+
+task:
+  name: "Firmware Dump by DumprX"
+  only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
+  skip: $CIRRUS_BRANCH == 'main'
+  
+  timeout_in: 120m
+  container:
+      image: ghcr.io/sushrut1101/docker:arch
+      privileged: true
+      cpu: 4
+      memory: 16G
+
+  Clone_script:
+      - git clone --depth=1 --single-branch https://github.com/DumprX/DumprX.git
+  
+  Set-SSH-Keys_script:
+      - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
+    
+      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
+      - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
+      
+      - chmod 600 ~/.ssh/id_rsa
+      - cd ~/.ssh 
+      - cat id_rsa.pub
+      - cat id_rsa
+      - cd
+      
+
+  
