@@ -20,11 +20,7 @@ task:
       - git config --global user.name "ajaysinghsati"
       - git config --global user.email "ajaysinghsati@gmail.com"
       - cd DumprX
-      - echo "$GITLAB_TOKEN" > .gitlab_token
-      - echo "$GITLAB_GROUP" > .gitlab_group
-      - echo "$TG_CHAT" > .tg_chat
-      - echo "$TG_TOKEN" > .tg_token
-      - echo "$GITLAB_INSTANCE" > .gitlab_instance
+      
       - sudo bash setup.sh
 
   DumprX_script:
@@ -33,22 +29,27 @@ task:
   Set-SSH-Keys_script:
       - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
     
-      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-      - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
-      - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
+      
       
       - chmod 600 ~/.ssh/id_rsa
       - cd ~/.ssh 
       - cat id_rsa.pub
       - cd
+      - ls
+      
+  Push-to-gitlab_script:
+
       - sleep 600 && echo "10 minutes have passed"
       - cd 
       - cd DumprX 
       - cd out 
       - ls
       - git init 
+      
+      - git remote add origin git@www.opencode.net:romdumprx/qti/holi.git
       - git add .
-      
-      
+      - git commit -m "Initial commit"
+      - git push -u origin master
+       
 
   
