@@ -34,7 +34,7 @@ task:
       - chmod 600 ~/.ssh/id_rsa
       - cd ~/.ssh 
       - cat id_rsa.pub
-      - cd
+      - cd -
       - ls
       
   Push-to-gitlab_script:
