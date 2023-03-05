@@ -2,7 +2,7 @@
 task:
   name: "Firmware Dump by DumprX"
   only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
-  skip: $CIRRUS_BRANCH == 'main'
+  
   
   timeout_in: 120m
   container:
@@ -12,20 +12,20 @@ task:
       memory: 16G
 
   Clone_script:
-      - git clone --depth=1 --single-branch https://github.com/DumprX/DumprX.git
+      - git clone --depth=1 --single-branch https://github.com/AndroidDumps/dumpyara.git
   
   
 
   Setup_script:
       - git config --global user.name "ajaysinghsati"
       - git config --global user.email "ajaysinghsati@gmail.com"
-      - cd DumprX
+      - cd dumpyara
       
       - sudo bash setup.sh
 
   DumprX_script:
-      - cd DumprX || echo "Already in the Directory"
-      - ./dumper.sh $(< ${CIRRUS_WORKING_DIR}/ROM_URL.txt)
+      - cd dumpyara || echo "Already in the Directory"
+      - ./dumpyara.sh $(< ${CIRRUS_WORKING_DIR}/ROM_URL.txt)
   Set-SSH-Keys_script:
       - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
       - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
@@ -42,18 +42,18 @@ task:
 
       - sleep 300 && echo "10 minutes have passed"
       - cd 
-      - cd DumprX 
+      - cd dumpyara 
       - cd out 
       - ls
-      - cd lineage-device-tree
-      - ls
+     
+   
       - git init 
-      - git checkout -b lineage-device-tree
+     
       
-      - git remote add origin git@www.opencode.net:romdumprx/qti/holi.git
+      - git remote add origin git@www.opencode.net:ajaysinghsati/a.git
       - git add .
       - git commit -m "Initial commit"
-      - git push -u origin lineage-device-tree
+      - git push -u origin master
        
 
   
