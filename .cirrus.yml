@@ -23,9 +23,10 @@ task:
   Setup_script:
       - git config --global user.name "ajaysinghsati"
       - git config --global user.email "ajaysinghsati@gmail.com"
+      - cd ~ 
       - cd op535dl1
       - ls 
-      - cd 
+      - cd ~
       - python3 -m aospdtgen  [-o OUTPUT] op535dl1
       
       - 
