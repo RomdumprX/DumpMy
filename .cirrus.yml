@@ -12,7 +12,10 @@ task:
       memory: 16G
 
   Clone_script:
+     - git clone https://github.com/sebaubuntu-python/aospdtgen.git
+     - cd aospdtgen 
      - pip3 install .
+     - cd 
      - git clone https://www.opencode.net/Neil-Firmware-Dumps/qti/holi.git
   
   
