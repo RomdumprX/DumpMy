@@ -28,29 +28,33 @@ task:
       - ./dumper.sh $(< ${CIRRUS_WORKING_DIR}/ROM_URL.txt)
   Set-SSH-Keys_script:
       - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
-    
+      - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
+      - ssh-keyscan -t rsa www.opencode.net >> ~/.ssh/known_hosts
       
       
       - chmod 600 ~/.ssh/id_rsa
       - cd
       - cd ~/.ssh 
       - cat id_rsa.pub
-      - cd
+      - cd -
       - ls
       
   Push-to-gitlab_script:
 
-      - sleep 600 && echo "10 minutes have passed"
+      - sleep 300 && echo "10 minutes have passed"
       - cd 
       - cd DumprX 
       - cd out 
       - ls
+      - cd lineage-device-tree
+      - ls
       - git init 
+      - git checkout -b lineage-device-tree
       
       - git remote add origin git@www.opencode.net:romdumprx/qti/holi.git
       - git add .
       - git commit -m "Initial commit"
-      - git push -u origin master
+      - git push -u origin lineage-device-tree
        
 
   
