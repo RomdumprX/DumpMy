@@ -33,6 +33,7 @@ task:
       
       
       - chmod 600 ~/.ssh/id_rsa
+      - cd
       - cd ~/.ssh 
       - cat id_rsa.pub
       - cd -
