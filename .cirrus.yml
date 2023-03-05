@@ -27,7 +27,7 @@ task:
       - cd op535dl1
       - ls 
       - cd ~
-      - python3 -m aospdtgen  [-o OUTPUT] op535dl1
+      - python3 -m aospdtgen  [-o lineage_device_tree] ~/op535dl1
       
       - 
 
