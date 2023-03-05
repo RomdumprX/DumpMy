@@ -12,16 +12,20 @@ task:
       memory: 16G
 
   Clone_script:
-      - git clone --depth=1 --single-branch https://github.com/AndroidDumps/dumpyara.git
+     - pip3 install .
+     - git clone https://www.opencode.net/Neil-Firmware-Dumps/qti/holi.git
   
   
 
   Setup_script:
       - git config --global user.name "ajaysinghsati"
       - git config --global user.email "ajaysinghsati@gmail.com"
-      - cd dumpyara
+      - cd holi 
+      - ls 
+      - cd 
+      - python3 -m aospdtgen  [-o OUTPUT] holi
       
-      - sudo bash setup.sh
+      - 
 
   DumprX_script:
       - cd dumpyara || echo "Already in the Directory"
