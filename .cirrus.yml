@@ -16,17 +16,17 @@ task:
      - cd aospdtgen 
      - pip3 install .
      - cd 
-     - git clone https://www.opencode.net/Neil-Firmware-Dumps/qti/holi.git
-  
+     - git clone https://dumps.tadiphone.dev/dumps/oneplus/op535dl1.git
+     
   
 
   Setup_script:
       - git config --global user.name "ajaysinghsati"
       - git config --global user.email "ajaysinghsati@gmail.com"
-      - cd holi 
+      - cd op535dl1
       - ls 
       - cd 
-      - python3 -m aospdtgen  [-o OUTPUT] holi
+      - python3 -m aospdtgen  [-o OUTPUT] op535dl1
       
       - 
 
