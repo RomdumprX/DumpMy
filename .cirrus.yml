@@ -16,7 +16,7 @@ task:
      - cd aospdtgen 
      - pip3 install .
      - cd 
-     - git clone https://www.opencode.net/Neil-Firmware-Dumps/qti/holi.git
+     - git clone git@www.opencode.net:Neil-Firmware-Dumps/qti/holi.git
      
   
 
