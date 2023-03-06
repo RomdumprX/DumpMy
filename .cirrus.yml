@@ -1,4 +1,3 @@
-
 task:
   name: "Firmware Dump by DumprX"
   only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
@@ -11,6 +10,7 @@ task:
       privileged: true
       cpu: 4
       memory: 16G
+
 
   Clone_script:
      - git clone https://github.com/sebaubuntu-python/aospdtgen.git
@@ -48,7 +48,7 @@ task:
       
       - cd CPH2381
       
-     - ls
+      - ls
    
       - git init 
      
