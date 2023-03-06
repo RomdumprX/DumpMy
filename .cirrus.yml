@@ -16,31 +16,19 @@ task:
      - cd aospdtgen 
      - pip3 install .
      - cd 
-     - git clone git@www.opencode.net:Neil-Firmware-Dumps/qti/holi.git
+     - git clone https://gitlab.com/android-dump/qti/holi.git
      
   
 
   Setup_script:
       - git config --global user.name "ajaysinghsati"
       - git config --global user.email "ajaysinghsati@gmail.com"
-      - cd ~ 
-      - cd op535dl1
-      - ls 
-      - mkdir lineage_device_tree
-      - ls
-      - cd ~
-      - python3 -m aospdtgen  -o lineage_device_tree ~/op535dl1
       
-      - cd ~
-      - cd op535dl1
-      - cd lineage_device_tree
-      - ls
-
   
   Set-SSH-Keys_script:
       - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
       - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
-      - ssh-keyscan -t rsa www.opencode.net >> ~/.ssh/known_hosts
+      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       
       
       - chmod 600 ~/.ssh/id_rsa
@@ -53,16 +41,18 @@ task:
 
       - sleep 300 && echo "10 minutes have passed"
       - cd ~
-      - cd op535dl1
-      - cd lineage_device_tree
+      - cd holi
+      - cd dummy-device-tree 
+      - cd oneplus 
       
+      - cd CPH2381
       
-     
+     - ls
    
       - git init 
      
       
-      - git remote add origin git@www.opencode.net:ajaysinghsati/a.git
+      - git remote add origin git@github.com:ajaysinghsati/devicetree.git
       - git add .
       - git commit -m "Initial commit"
       - git push -u origin master
