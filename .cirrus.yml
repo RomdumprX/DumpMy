@@ -29,7 +29,7 @@ task:
       - mkdir lineage_device_tree
       - ls
       - cd ~
-      - python3 -m aospdtgen  [-o lineage_device_tree] ~/op535dl1
+      - python3 -m aospdtgen  -o lineage_device_tree ~/op535dl1
       
       - 
 
