@@ -3,10 +3,11 @@ task:
   name: "Firmware Dump by DumprX"
   only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
   
-  
+  auto_cancellation: $CIRRUS_BRANCH == 'autocancel'
   timeout_in: 120m
   container:
-      image: ghcr.io/sushrut1101/docker:arch
+      image: ubuntu-20.04
+
       privileged: true
       cpu: 4
       memory: 16G
