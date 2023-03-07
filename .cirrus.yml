@@ -19,10 +19,14 @@ task:
      - git clone https://gitlab.com/android-dump/qti/holi.git
      - cd ~ 
      - cd device 
+     - ls
      - cd qti 
-     - cd holi 
-     - bash setup-makefile.sh
-     - bash extract-files.sh ~/holi
+     - ls
+     - cd holi
+     - ls
+      
+     - ./setup-makefile.sh
+     - ./extract-files.sh ~/holi
      
   
 
