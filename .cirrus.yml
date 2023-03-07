@@ -53,7 +53,7 @@ task:
   Push-to-gitlab_script:
 
       - sleep 300 && echo "10 minutes have passed"
-      - cd ~
+      
       - cd
      
     
