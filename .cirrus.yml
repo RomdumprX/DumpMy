@@ -16,7 +16,7 @@ env:
 task:
   name: "Firmware Dump by DumprX"
   only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
-  skip: $CIRRUS_BRANCH == 'main'
+  
   auto_cancellation: $CIRRUS_BRANCH == 'autocancel'
   timeout_in: 120m
   container:
