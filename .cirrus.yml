@@ -65,13 +65,14 @@ task:
       
   Push-to-gitlab_script:
 
-      - sleep 300 && echo "10 minutes have passed"
+      
       
      
       - ls
       - git init
       - git add .
       - git commit -m "Initial commit"
+      - git remote rm origin
       - git remote add origin git@gitlab.com:ajaysinghsati/ajay.git
       - git push -u origin master
       
