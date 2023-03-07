@@ -56,8 +56,13 @@ task:
       
      
       - ls
-    
+      - git init 
       
+      - git remote add origin git@gitlab.com:ajaysinghsati/vendor.git
+      - git add .
+      - git commit -m "add README"
+      
+      - git push -u origin main
     
       
     
