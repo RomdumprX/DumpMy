@@ -54,12 +54,14 @@ task:
       
   
   Set-SSH-Keys_script:
-      - mkdir -p ~/.ssh
-      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
       - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
-      - ssh-keyscan -t rsa $GITLAB_INSTANCE >> ~/.ssh/known_hosts
-      - echo "$PRIV_SSH_KEY" > ~/.ssh/id_rsa
+      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      
+      
       - chmod 600 ~/.ssh/id_rsa
+      - cd ~/.ssh 
+      - cat id_rsa.pub
       
       
       
@@ -67,7 +69,7 @@ task:
 
       
       
-     
+      - sleep 300 && echo 000000
       - ls
       - git init 
       - git branch ajay 
