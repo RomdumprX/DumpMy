@@ -35,7 +35,7 @@ task:
      - ls
      
      - cd device 
-     - ls
+     - ls 
      - cd qti 
      - ls
      - cd holi
@@ -70,6 +70,13 @@ task:
       
       
       - sleep 300 && echo 000000
+      - ls 
+      - cd vendor 
+      - ls
+      - cd qualcomm 
+      - ls 
+     
+      - cd holi 
       - ls
       - git init 
       - git branch ajay 
