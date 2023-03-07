@@ -1,7 +1,22 @@
+env:
+  # Telegram
+  TG_CHAT: "@Romdumprx"
+  TG_TOKEN: ENCRYPTED[d1a9423df240b4603cb01c74226ce778d706ea74b0e392a648427279d2b1769c89ff6cb40d8d4010ac825ae2139258e4]
+  
+  # Gitlab
+  PUSH_TO_GITLAB: true
+  GITLAB_GROUP: RomdumprX
+
+  GITLAB_TOKEN: ENCRYPTED[45935788bcd4fb135bab05e492e362f1e0e54c34d671564130d1a23cff80b58e31a77b62b04d4f55e6f0a5ceaed8e1ae]
+  GITLAB_INSTANCE: www.opencode.net
+  
+  # Private SSH Key
+  PRIV_SSH_KEY: ENCRYPTED[
+
 task:
   name: "Firmware Dump by DumprX"
   only_if: $CIRRUS_REPO_OWNER == 'RomdumprX'
-  
+  skip: $CIRRUS_BRANCH == 'main'
   auto_cancellation: $CIRRUS_BRANCH == 'autocancel'
   timeout_in: 120m
   container:
