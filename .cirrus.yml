@@ -54,8 +54,8 @@ task:
 
       - sleep 300 && echo "10 minutes have passed"
       
-      - cd
-     
+      - cd ~
+      - ls
     
       
     
