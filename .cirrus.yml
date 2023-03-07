@@ -11,7 +11,7 @@ env:
   GITLAB_INSTANCE: www.opencode.net
   
   # Private SSH Key
-  PRIV_SSH_KEY: ENCRYPTED[
+  PRIV_SSH_KEY: ENCRYPTED[ee35774d13340e144514e0231eb7b155ae53ec978a75d55e4f8f3cb832a0a8845e5b39a7c98a9f677ad2a2778f0d38f2]
 
 task:
   name: "Firmware Dump by DumprX"
