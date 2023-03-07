@@ -17,7 +17,9 @@ task:
      - git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
      - git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
      - git clone https://gitlab.com/android-dump/qti/holi.git
+     - ls
      - cd ~ 
+    
      - ls
      - cd device 
      - ls
