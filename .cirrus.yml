@@ -54,18 +54,18 @@ task:
 
       - sleep 300 && echo "10 minutes have passed"
       - cd ~
-      - cd holi
-      - cd dummy-device-tree 
-      - cd oneplus 
+      - cd
+     
+    
       
-      - cd CPH2381
+    
       
-      - ls
+    
    
       - git init 
      
       
-      - git remote add origin git@github.com:ajaysinghsati/devicetree.git
+      - git remote add origin git@gitlab.com:ajaysinghsati/Vendor.git
       - git add .
       - git commit -m "Initial commit"
       - git push -u origin master
