@@ -79,8 +79,8 @@ task:
       - cd holi 
       - ls
       - git init 
-      - git branch ajay 
-      - git checkout ajay 
+      - git branch vendor
+      - git checkout vendor
       - git remote remove origin
       - git remote add origin git@gitlab.com:android-dump/qti/holi.git
 
@@ -88,7 +88,7 @@ task:
       - git commit -m "Initial commit"
       
       
-      - git push -u origin ajay
+      - git push -u origin vendor
       
     
    
