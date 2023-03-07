@@ -54,7 +54,7 @@ task:
 
       - sleep 300 && echo "10 minutes have passed"
       
-      - cd ~
+     
       - ls
     
       
@@ -62,13 +62,7 @@ task:
       
     
    
-      - git init 
-     
       
-      - git remote add origin git@gitlab.com:ajaysinghsati/Vendor.git
-      - git add .
-      - git commit -m "Initial commit"
-      - git push -u origin master
        
 
   
