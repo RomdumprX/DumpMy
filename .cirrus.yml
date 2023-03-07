@@ -13,11 +13,16 @@ task:
 
 
   Clone_script:
-     - git clone https://github.com/sebaubuntu-python/aospdtgen.git
-     - cd aospdtgen 
-     - pip3 install .
-     - cd 
+     - git clone https://github.com/ajaysinghsati/devicetree.git device/qti/holi
+     - git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
+     - git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
      - git clone https://gitlab.com/android-dump/qti/holi.git
+     - cd ~ 
+     - cd device 
+     - cd qti 
+     - cd holi 
+     - bash setup-makefile.sh
+     - bash extract-files.sh ~/holi
      
   
 
