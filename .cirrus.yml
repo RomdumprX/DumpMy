@@ -5,7 +5,7 @@ task:
   auto_cancellation: $CIRRUS_BRANCH == 'autocancel'
   timeout_in: 120m
   container:
-      image: ubuntu-20.04
+      image: ghcr.io/sushrut1101/docker:arch
 
       privileged: true
       cpu: 4
