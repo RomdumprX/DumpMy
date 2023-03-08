@@ -81,8 +81,15 @@ task:
       - cd proprietary
       - cd boot/ramdisk/vendor/lib64/
       - ls
-
+      - cd boot
+      - ls 
+      - cd ramdisk 
+      - ls 
+      - vendor 
+      - ls 
+      - lib64 
       - ls
+      
       - git init 
       - git add 
       - git commit -m "first commit"
