@@ -73,7 +73,7 @@ task:
       - ls 
       - cd vendor 
       - ls
-      - cd qualcomm 
+       
       - ls 
      
       - cd holi
