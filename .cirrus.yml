@@ -69,7 +69,7 @@ task:
 
       
       
-      - sleep 300
+      
       - ls 
       - cd vendor 
       - ls
@@ -78,7 +78,7 @@ task:
      
       - cd holi
       - ls 
-      - qti 
+      - cd qti 
       - ls
       - cd proprietary
       
