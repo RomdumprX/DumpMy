@@ -44,7 +44,8 @@ task:
      - chmod u+x setup-makefiles.sh
      - ./setup-makefiles.sh
      - chmod u+x extract-files.sh
-     - ./extract-files.sh /holi
+     - pwd
+     - ./extract-files.sh ~/root/holi
      
   
 
