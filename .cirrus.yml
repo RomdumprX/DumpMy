@@ -79,7 +79,7 @@ task:
       - cd holi
       - ls
       - cd proprietary
-      - cd boot/ramdisk/vendor/lib64/
+      
       - ls
       - cd boot
       - ls 
