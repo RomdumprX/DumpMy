@@ -87,9 +87,9 @@ task:
       - ls 
       - cd ramdisk 
       - ls 
-      - vendor 
+      - cd vendor 
       - ls 
-      - lib64 
+      - cd lib64 
       - ls
       
       - git init 
