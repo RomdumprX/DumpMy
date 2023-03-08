@@ -77,6 +77,8 @@ task:
       - ls 
      
       - cd holi
+      - ls 
+      - qti 
       - ls
       - cd proprietary
       
