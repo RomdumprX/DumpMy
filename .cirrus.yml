@@ -27,18 +27,25 @@ task:
       memory: 16G
 
 
-  Clone_script: 
-     - git clone https://github.com/ShivamKumarJha/android_tools.git
+  Clone_script:
+     - git clone https://github.com/ajaysinghsati/devicetree.git device/qti/holi
+     - git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
+     - git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
      - git clone https://gitlab.com/android-dump/qti/holi.git ~/holi
      - ls
-     - cd android_tools
-     - chmod +x setup.sh
-     - sudo bash setup.sh
-     - ./tools/dummy_dt.sh ~/holi 
+     
+     - cd device 
      - ls 
-     
-
-     
+     - cd qti 
+     - ls
+     - cd holi
+     - ls 
+    
+     - chmod u+x setup-makefiles.sh
+     - ./setup-makefiles.sh
+     - chmod u+x extract-files.sh
+     - pwd
+     - ./extract-files.sh ~/holi
      
   
 
@@ -64,7 +71,27 @@ task:
       
       
       
+      - ls 
+      - cd vendor 
+      - ls
+       
+      - ls 
+     
+      - cd holi
+      - ls 
+      - cd qti 
+      - ls
+      - cd proprietary
       
+      - ls
+      - cd boot
+      - ls 
+      - cd ramdisk 
+      - ls 
+      - cd vendor 
+      - ls 
+      - cd lib64 
+      - ls
       
       - git init 
       - git add 
