@@ -34,7 +34,7 @@ task:
      - cd android_tools
      - chmod +x setup.sh
      - sudo bash setup.sh
-     - ./tools/dummy_dt.sh ~/holi 
+     - ./tools/dummy_dt.sh /holi 
      - ls 
      
 
