@@ -29,12 +29,12 @@ task:
 
   Clone_script: 
      - git clone https://github.com/ShivamKumarJha/android_tools.git
-     - git clone https://gitlab.com/android-dump/qti/holi.git holi
+     - git clone https://gitlab.com/android-dump/qti/holi.git ~/holi
      - ls
      - cd android_tools
      - chmod +x setup.sh
      - sudo bash setup.sh
-     - ./tools/dummy_dt.sh /holi 
+     - ./tools/dummy_dt.sh ~/holi 
      - ls 
      
 
