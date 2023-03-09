@@ -69,7 +69,7 @@ task:
   Push-to-gitlab_script:
 
       
-      
+      - sleep 600
       
       - ls 
       - cd vendor 
