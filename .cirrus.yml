@@ -77,9 +77,9 @@ task:
        
       - ls 
      
-      - cd CPH2381
-      - ls 
       - cd oneplus
+      - ls 
+      - cd CPH2381
       - ls
       
       
