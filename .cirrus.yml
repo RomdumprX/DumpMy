@@ -29,17 +29,24 @@ task:
 
   Clone_script:
      
+     - git clone https://github.com/ajaysinghsati/device_oneplus_CPH2381.git device/qti/holi
+     - git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
+     - git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
      - git clone https://gitlab.com/android-dump/qti/holi.git ~/holi
      - ls
      
-     - cd ~/holi
+     - cd device 
      - ls 
-     - cd dummy-device-tree
+     - cd qti 
      - ls
-     - cd oneplus
+     - cd holi
      - ls 
-     - cd CPH2381
-     
+    
+     - chmod u+x setup-makefiles.sh
+     - ./setup-makefiles.sh
+     - chmod u+x extract-files.sh
+     - pwd
+     - ./extract-files.sh ~/holi
      
   
 
@@ -66,26 +73,21 @@ task:
       - sleep 300
       
       - ls 
-      - cd ~/holi
-
-      - ls 
-
-      - cd dummy-device-tree
-
+      - cd vendor 
       - ls
-
-      - cd oneplus
-
+       
       - ls 
-
+     
+      - cd oneplus
+      - ls 
       - cd CPH2381
-      
+      - ls
       
       - git init 
       - git add .
       - git commit -m "first commit"
       - git branch -M main
-      - git remote add origin git@github.com:ajaysinghsati/dummy_device_CPH2381.git
+      - git remote add origin git@github.com:ajaysinghsati/dummy-vendir.git
       - git push -u origin main
       
     
