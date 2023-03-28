@@ -29,7 +29,7 @@ task:
 
   Clone_script:
      
-     - git clone https://github.com/ajaysinghsati/device_oneplus_CPH2381.git device/qti/holi
+     - git clone git@github.com:ajaysinghsati/dummy_device_CPH2381.git device/qti/holi
      - git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
      - git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
      - git clone https://gitlab.com/android-dump/qti/holi.git ~/holi
