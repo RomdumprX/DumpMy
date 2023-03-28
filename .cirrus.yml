@@ -32,7 +32,7 @@ task:
      - git clone https://gitlab.com/android-dump/qti/holi.git ~/holi
      - ls
      
-     - cd holi
+     - cd ~/holi
      - ls 
      - cd dummy-device-tree
      - ls
@@ -66,7 +66,7 @@ task:
       - sleep 300
       
       - ls 
-      - cd holi
+      - cd ~/holi
 
       - ls 
 
