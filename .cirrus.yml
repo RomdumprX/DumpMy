@@ -29,24 +29,9 @@ task:
 
   Clone_script:
      
-     - git clone https://github.com/ajaysinghsati/dummy_device_CPH2381.git device/qti/holi
-     - git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
-     - git clone https://github.com/LineageOS/android_prebuilts_extract-tools prebuilts/extract-tools
-     - git clone https://gitlab.com/android-dump/qti/holi.git ~/holi
-     - ls
+     - git clone https://www.opencode.net/romdumprx/oneplus/CPH2381.git
      
-     - cd device 
-     - ls 
-     - cd qti 
-     - ls
-     - cd holi
-     - ls 
-    
-     - chmod u+x setup-makefiles.sh
-     - ./setup-makefiles.sh
-     - chmod u+x extract-files.sh
-     - pwd
-     - ./extract-files.sh ~/holi
+     
      
   
 
@@ -71,23 +56,13 @@ task:
 
       
       - sleep 300
-      
-      - ls 
-      - cd vendor 
-      - ls
-       
-      - ls 
-     
-      - cd oneplus
-      - ls 
       - cd CPH2381
-      - ls
-      
+      - cd lineage-device-tree
       - git init 
       - git add .
-      - git commit -m "first commit"
+      - git commit -m "making device tree using aospdtgen"
       - git branch -M main
-      - git remote add origin git@github.com:ajaysinghsati/dummy-vendir.git
+      - git remote add origin git@github.com:ajaysinghsati/lineage-device-tree.git
       - git push -u origin main
       
     
